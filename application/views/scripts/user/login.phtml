@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
+</script>
+    </head>
+    <body>
+ <form id="signup" class="form-signup" name="<?php echo  $this->escape($this->login->getName()) ?>" method="<?php echo  $this->escape($this->login->getMethod() ) ?>" action="<?php echo  $this->escape($this->login->getAction() ) ?>" >
+<table><tr><td>
+     <label>Fullname</label></td><td>
+<?php echo $this->login->name; ?></td></tr><tr><td>
+     <label>Username</label></td><td>
+<?php echo $this->login->username; ?></td></tr><tr><td>
+<label>email</label></td><td>
+<?php echo $this->login->email; ?></td></tr><tr><td>
+<label>Password</label></td><td>
+<?php echo $this->login->password; ?></td><tr><td>
+<?php echo $this->login->Submit; ?></td></tr></table>
+</form>
+        </body>
+        </html>
