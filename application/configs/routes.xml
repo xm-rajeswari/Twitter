@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+    <routes>
+        <newindex>
+            <route>test/testing</route>
+            <defaults>
+                <controller>index</controller>
+                <action>index</action>
+            </defaults>
+        </newindex>
+        <usertest>
+            <route>/userdsfdsf/login</route>
+            <defaults>
+                <controller>user</controller>
+                <action>login</action>
+            </defaults>
+        </usertest>
+     </routes>
+</configdata>
