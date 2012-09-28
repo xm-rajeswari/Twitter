@@ -6,6 +6,7 @@ class UserController extends Zend_Controller_Action
 
 //$this->_getParam('name');
  //$this->getRequest()->getParam('name');
+
    $twitter = new Twitter_Forms_Login(); 
  $this->view->login = $twitter;
  
@@ -13,6 +14,7 @@ class UserController extends Zend_Controller_Action
      
      if($this->getRequest()->isPost() && $twitter->isValid($formData))
            {
+
 
          $name=$_POST['name'];
          $email=$_POST['email']; 
@@ -30,6 +32,7 @@ class UserController extends Zend_Controller_Action
         }
 else{
     //echo "True";die;
+
     //Twitter_Models_DbTable_User::getInstance()
     //
            $user=Twitter_Models_DbTable_User::getInstance();
@@ -39,7 +42,7 @@ else{
                 $newrow->username = $username;
                 $newrow->password = $password;
               // $newRow->password=sha1($formData['password']);
-             
+
                 $newrow->save();
                 //echo "you are login successfully";
                 //return true;
@@ -47,13 +50,17 @@ else{
                
                 $this->_redirect('/');
            
+
 }     //echo "<pre>"; print_R($_SERVER);die;
+
+
                 
            }
            
            
        function logupAction(){
            $twitter = new Twitter_Forms_Logup(); 
+
            $this->view->logup = $twitter;
            $formData = $this->getRequest()->getPost();
      
@@ -68,6 +75,7 @@ else{
  
        }    
 
+
     
 //    $users=new Application_Model_DbTable_User();
 //$newRow= $users->createRow();
@@ -78,6 +86,7 @@ else{
 //$newRow->password=$formData['password'];
 //$newRow->password=sha1($formData['password']);
 //$newRow->save();
+
      
     
      

@@ -11,7 +11,6 @@ class Twitter_Models_DbTable_User extends Zend_Db_Table_Abstract
      */
     public function insertRow($options)
     {
-        echo "asd";die;
 //        $select = $this->select();
 //
 //        $row = $this->createRow();
@@ -27,16 +26,16 @@ class Twitter_Models_DbTable_User extends Zend_Db_Table_Abstract
     }
 
 
-    public function selectRow($username, $password) 
-    {
-      $db = Zend_Db_Table::getDefaultAdapter();
-      $temp1 = new Zend_Db_Select($db);
-     $temp = $db->select()->from( 'twit_login' );
-      $t=$temp1->fetchAll($temp);
-      
-      
-      $t[1];
-    }
+//    public function selectRow($username, $password) 
+//    {
+//      $db = Zend_Db_Table::getDefaultAdapter();
+//      $temp1 = new Zend_Db_Select($db);
+//     $temp = $db->select()->from( 'twit_login' );
+//      $t=$temp1->fetchAll($temp);
+//      
+//      
+//      $t[1];
+//    }
     public function check($email, $username)
     {
         Zend_Db_Table::getDefaultAdapter();
@@ -57,6 +56,7 @@ class Twitter_Models_DbTable_User extends Zend_Db_Table_Abstract
     }
     
      /**
+
      * Fuction to get class instance
      * 
      */
@@ -69,5 +69,25 @@ class Twitter_Models_DbTable_User extends Zend_Db_Table_Abstract
         }
             return self::$_instance;
      }
+
+    public function selectRow($username, $password) 
+    {
+      //$db = Zend_Db_Table::getDefaultAdapter();
+      //$temp1 = new Zend_Db_Select($db);
+     $temp = $this->select()->from($this->_name)
+             ->where('username=?',$username)
+             ->where("password=?",$password);
+      $t=$this->fetchRow($temp);
+     
+
+ if (count($t))
+        echo 'Login Successfull';
+ else 
+        echo 'Invalid username and password';
+      
+
+    //$t[1];
+    }
+
 }
 

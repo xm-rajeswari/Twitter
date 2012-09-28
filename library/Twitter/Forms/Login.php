@@ -56,7 +56,6 @@ class Twitter_Forms_Login extends Zend_Form
                        ->removeDecorator('HtmlTag')
                        ->addFilter('stringTrim')
                        ->setOptions(array('placeholder'=>'email'))
-                       ->addValidator('EmailAddress')
                        ->addValidator('notEmpty',true,array('messages'=>'Email must not be empty'))
                        ->setRequired(true)
                        ->setErrorMessages(array("Please enter a valid email address"));
