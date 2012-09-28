@@ -14,8 +14,6 @@ class UserController extends Zend_Controller_Action
      
      if($this->getRequest()->isPost() && $twitter->isValid($formData))
            {
-
-
          $name=$_POST['name'];
          $email=$_POST['email']; 
     $username=$_POST['username']; 

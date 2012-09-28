@@ -53,6 +53,8 @@ class Twitter_Models_DbTable_User extends Zend_Db_Table_Abstract
      return TRUE;
 
       
+ 
+ 
     }
     
      /**

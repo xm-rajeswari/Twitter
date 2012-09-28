@@ -10,6 +10,8 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        
+        
 //$obj=new Login();
 //$this->view->form;
 //      $form=new Application_form_Login();
@@ -31,7 +33,7 @@ class IndexController extends Zend_Controller_Action
           $username=$_POST['username']; 
          $password=$_POST['password'];
           $obj=new Twitter_Models_DbTable_User();
-         $obj->selectRow($username, $password);
+          $obj->selectRow($username, $password);
 
            // do something here to log in
 

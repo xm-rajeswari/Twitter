@@ -75,6 +75,8 @@ class Twitter_Forms_Login extends Zend_Form
                        ->setRequired(true)
                        ->addValidator('notEmpty',true,array('messages'=>'Password must not be empty'));
       
+      
+      
       $this->addElements(array($name,$username,$email,$password));
       $this->addElement('Submit','Submit');
 

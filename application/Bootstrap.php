@@ -11,6 +11,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $routespath = APPLICATION_PATH."/configs/routes.xml";
         $routerConfig = new Zend_Config_Xml($routespath);
         $router->addConfig($routerConfig->routes);
+        
+        
     }
 }
 
